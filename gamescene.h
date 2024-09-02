@@ -52,25 +52,8 @@ private:
     void victory();
 
     //From QGraphicsScene interface
-protected:
-    /**
-    * @brief Collects position of mouses cursor when left mouse button is pressed and calls to move adequate tile.
-    * @par Parameters
-    *   event - pointer to QGraphicsSceneMouseEvent that will triggered when left mouse button is pressed.
-    * @par Returns
-    *   Nothing.
-    */
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-
-    /**
-    * @brief Closes the aplication when Esc is pressed.
-    * @par Parameters
-    *   event - pointer to QKeyEvent that will triggered when Esc is pressed.
-    * @par Returns
-    *   Nothing.
-    */
     void keyPressEvent(QKeyEvent *event) override;
-
 };
 
 #endif // GAMESCENE_H
