@@ -3,7 +3,7 @@
  * @author Kornel Samociuk
  * @date 02.09.2024
  *
- * @brief This class holds data about visual position and appearance of individual tile
+ * @brief This class holds data about visual position and appearance of individual tile.
  */
 
 #ifndef PIXMAPTILE_H
