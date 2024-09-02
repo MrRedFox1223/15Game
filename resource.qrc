@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/bg3.png</file>
+        <file>img/bg4.png</file>
+        <file>img/bg5.png</file>
+        <file>img/tiles3.png</file>
+        <file>img/tiles4.png</file>
+        <file>img/tiles5.png</file>
+        <file>img/win.jpg</file>
+    </qresource>
+</RCC>
