@@ -17,7 +17,7 @@ void GameScene::loadPixmap()
     m_mainTilePixmap.load(PATH_TO_TILES);
 
     for(int i = 0; i < m_game.getSize() * m_game.getSize() ; i++)
-        m_tilesPixmap.push_back(m_mainTilePixmap.copy(i*m_tileWidth, 0, m_tileWidth, m_tileWidth));
+        m_tilesPixmaps.push_back(m_mainTilePixmap.copy(i*m_tileWidth, 0, m_tileWidth, m_tileWidth));
 
     m_bgPixmap.load(PATH_TO_BG);
     m_winPixmap.load(PATH_TO_WIN);
@@ -40,7 +40,7 @@ void GameScene::initialize()
         {
             int n = m_game.getGrid()[c][r];
             m_pixmapTiles[c].push_back(new PixmapTile(this)); //Create tile
-            m_pixmapTiles[c][r]->setPixmap(m_tilesPixmap[n]); //Set how tile looks (number)
+            m_pixmapTiles[c][r]->setPixmap(m_tilesPixmaps[n]); //Set how tile looks (number)
             m_pixmapTiles[c][r]->setPos(c * m_tileWidth, r * m_tileWidth); //Set tile position
             addItem(m_pixmapTiles[c][r]); //Show tile
         }
@@ -109,7 +109,7 @@ void GameScene::updatePixmaps()
         for (int r = 0; r < m_game.getSize(); r++)
         {
             int n = m_game.getGrid()[c][r];
-            m_pixmapTiles[c][r]->setPixmap(m_tilesPixmap[n]);
+            m_pixmapTiles[c][r]->setPixmap(m_tilesPixmaps[n]);
             m_pixmapTiles[c][r]->setPos(c * m_tileWidth, r * m_tileWidth);
         }
     }

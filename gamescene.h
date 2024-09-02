@@ -1,3 +1,11 @@
+/**
+ * @file gamescene.h
+ * @author Kornel Samociuk
+ * @date 02.09.2024
+ *
+ * @brief This class handles visualization of the game and interaction logic with the player.
+ */
+
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
@@ -9,7 +17,15 @@
 class GameScene: public QGraphicsScene, public GameInitializator
 {
     Q_OBJECT
+
 public:
+    /**
+    * @brief Constructor, that sets values needed to load reasources of the game.
+    * @par Parameters
+    *   parent - pointer to QObject that will be a place to show the game scene.
+    * @par Returns
+    *   Nothing.
+    */
     GameScene(QObject *parent = nullptr);
 
 private:
@@ -19,7 +35,7 @@ private:
     QPixmap m_bgPixmap;
     QPixmap m_winPixmap;
     QGraphicsPixmapItem *m_winScreen;
-    std::vector<QPixmap> m_tilesPixmap;
+    std::vector<QPixmap> m_tilesPixmaps;
     std::vector<std::vector<PixmapTile *>> m_pixmapTiles;
     int m_clickedX;
     int m_clickedY;
@@ -37,7 +53,22 @@ private:
 
     //From QGraphicsScene interface
 protected:
+    /**
+    * @brief Collects position of mouses cursor when left mouse button is pressed and calls to move adequate tile.
+    * @par Parameters
+    *   event - pointer to QGraphicsSceneMouseEvent that will triggered when left mouse button is pressed.
+    * @par Returns
+    *   Nothing.
+    */
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+
+    /**
+    * @brief Closes the aplication when Esc is pressed.
+    * @par Parameters
+    *   event - pointer to QKeyEvent that will triggered when Esc is pressed.
+    * @par Returns
+    *   Nothing.
+    */
     void keyPressEvent(QKeyEvent *event) override;
 
 };
