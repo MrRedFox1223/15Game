@@ -23,7 +23,6 @@ private:
     std::vector<std::vector<PixmapTile *>> m_pixmapTiles;
     int m_clickedX;
     int m_clickedY;
-    int test;
 
     //Visualization data
     QString PATH_TO_TILES;
